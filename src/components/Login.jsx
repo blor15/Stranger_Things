@@ -2,7 +2,6 @@ import React, { useCallback, useState } from 'react';
 import { login } from '../api/login';
 import { register } from '../api/register';
 
-
 export const Login = (prop) => {
   const { clearError, onAuthenticate, onError } = prop;
 
