@@ -5,7 +5,7 @@ import { Login } from './Login';
 import { Posts } from './Posts';
 import { UserContext } from './UserContext';
 import { Logout } from './Logout';
-import  Search  from './Search';
+// import  Search  from './Search';
 
 export const App = () => {
   const [error, setError] = useState('');
@@ -28,7 +28,7 @@ export const App = () => {
         <nav className="navbar navbar-default">
          <h2>Stranger's Things</h2>
           <div>
-            <Search />
+            {/* <Search /> */}
             <Link to="/login" id='login'>Login/Register </Link>
             <Link to="/posts">Posting </Link>
           </div>
