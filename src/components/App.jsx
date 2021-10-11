@@ -5,6 +5,7 @@ import { Login } from './Login';
 import { Posts } from './Posts';
 import { UserContext } from './UserContext';
 import { Logout } from './Logout';
+import  Search  from './Search';
 
 export const App = () => {
   const [error, setError] = useState('');
@@ -22,15 +23,16 @@ export const App = () => {
 
   return (
     <UserContext.Provider value={jwt}>
-      {jwt && <Logout />}
-      <nav className="navbar navbar-default">
-        <h2>Stranger's Things</h2>
+      <BrowserRouter>
+        {jwt && <Logout />}
+        <nav className="navbar navbar-default">
+         <h2>Stranger's Things</h2>
           <div>
+            <Search />
             <Link to="/login" id='login'>Login/Register </Link>
             <Link to="/posts">Posting </Link>
           </div>
         </nav>
-      <BrowserRouter>
         <Switch>
           <Route
             path="/login"
