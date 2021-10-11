@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import { Login } from './Login';
 import { Posts } from './Posts';
 import { UserContext } from './UserContext';
+import { Logout } from './Logout';
 
 export const App = () => {
   const [error, setError] = useState('');
@@ -34,6 +35,7 @@ export const App = () => {
             path="/login"
             component={!jwt ? () => <Login clearError={clearError} onAuthenticate={onAuthenticate} 
             onError={onError} /> : () => <h1>You are logged in.</h1>} />
+          <Logout isLoggedIn={false} />  
           <Route path="/posts" component={Posts} />
         </Switch> 
       </BrowserRouter>
